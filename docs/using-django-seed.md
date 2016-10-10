@@ -8,7 +8,7 @@
 * Update `README.md` with a details for your project
 * Update `package.json` with name description and repository for your project
 * You need a `SECRET_KEY` env variable set on your machine. See `conf/settings/base.py` for the usage
-* Create a virtualenv with virtualenvwrapper: `mkvirtualenv -p PYTHON_TO_PYTHON_3 VIRTUALENV_NAME`
+* Create a virtualenv with virtualenvwrapper: `mkvirtualenv -p PATH_TO_PYTHON_3 VIRTUALENV_NAME`
 * Install Python dependencies: `pip install -r requirements/local.txt`
 * Install Node dependecies: `npm install`
 * Migrate to create the initial database: `./manage.py migrate`
