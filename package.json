@@ -4,8 +4,7 @@
   "description": "",
   "repository": "",
   "engines": {
-    "node": "6.8.1",
-    "npm": "3.10.3"
+    "node": "6.8.1"
   },
   "scripts": {
     "start": "gulp",
