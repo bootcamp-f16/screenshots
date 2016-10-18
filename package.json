@@ -10,11 +10,14 @@
   "scripts": {
     "start": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "eslint": "eslint"
+    "eslint": "eslint",
+    "postinstall": "gulp webpack"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+  },
+  "dependencies": {
     "babel-core": "^6.17.0",
     "babel-eslint": "^7.0.0",
     "babel-loader": "^6.2.5",
@@ -27,9 +30,7 @@
     "gulp": "^3.9.1",
     "raw-loader": "^0.5.1",
     "webpack": "^1.13.2",
-    "webpack-stream": "^3.2.0"
-  },
-  "dependencies": {
+    "webpack-stream": "^3.2.0",
     "angular": "^1.5.8",
     "angular-resource": "^1.5.8",
     "js-cookie": "^2.1.3",
