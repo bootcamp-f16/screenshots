@@ -1,8 +1,8 @@
 {
-  "name": "",
+  "name": "Screenshots",
   "version": "1.0.0",
-  "description": "",
-  "repository": "",
+  "description": "Upload screenshots and view",
+  "repository": "https://github.com/bootcamp-f16/screenshots",
   "engines": {
     "node": "6.8.1"
   },
