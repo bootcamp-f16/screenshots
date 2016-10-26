@@ -14,6 +14,11 @@ const AppModule = angular.module('app', [
 
         $stateProvider.state('index', {
             url: '/',
+            resolve: {
+                screenshots(screenshotsService) {
+                    return screenshotsService.getAllScreenshots();
+                },
+            },
             component: 'screenshotsList',
         });
     });

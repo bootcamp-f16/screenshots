@@ -3,6 +3,9 @@ import ScreenshotsListController from './screenshots-list.controller';
 
 const screenshotsListComponent = {
     template,
+    bindings: {
+        screenshots: '<',
+    },
     controller: ScreenshotsListController,
 };
 
