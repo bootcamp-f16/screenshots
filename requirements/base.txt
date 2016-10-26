@@ -3,6 +3,9 @@ Unipath==1.1
 djangorestframework==3.4.7
 Pillow==3.4.2
 
+django-storages==1.5.1
+boto==2.43.0
+
 dj-database-url==0.4.1
 gunicorn==19.6.0
 whitenoise==3.2.2
