@@ -1,1 +1,20 @@
-{{$ctrl.screenshots | json}}
+<div class="row screenshot-list">
+    <div
+        class="col-md-3"
+        ng-repeat="screenshot in $ctrl.screenshots">
+        <div class="thumbnail">
+            <a ui-sref="screenshot({ screenshotId: screenshot.id})">
+                <img
+                    class="img-responsive"
+                    ng-src="{{screenshot.screenshot}}"
+                    alt="screenshot"
+                >
+            </a>
+            <div class="caption">
+                <p class="lead">
+                    Created: {{ screenshot.created_date | date:'medium'}}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
