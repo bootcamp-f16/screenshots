@@ -1,0 +1,7 @@
+.screenshot-list .thumbnail {
+    height: 200px;
+}
+
+.screenshot-list .thumbnail img{
+    max-height: 70%;
+}

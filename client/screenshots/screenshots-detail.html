@@ -1,0 +1,14 @@
+<div class="thumbnail">
+    <a ui-sref="screenshot({ screenshotId: $ctrl.screenshot.id})">
+        <img
+            class="img-responsive"
+            ng-src="{{$ctrl.screenshot.screenshot}}"
+            alt="screenshot"
+        >
+    </a>
+    <div class="caption">
+        <p class="lead">
+            Created: {{ $ctrl.screenshot.created_date | date:'medium'}}
+        </p>
+    </div>
+</div>
