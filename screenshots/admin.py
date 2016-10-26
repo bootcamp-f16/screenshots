@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Screenshot
+
+class ScreenshotAdmin(admin.ModelAdmin):
+    list_display = ('screenshot', 'created_date')
+
+admin.site.register(Screenshot, ScreenshotAdmin)
