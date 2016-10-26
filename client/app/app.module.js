@@ -22,7 +22,13 @@ const AppModule = angular.module('app', [
             component: 'screenshotsList',
         }).state('screenshot', {
             url: '/screenshot/{screenshotId}',
-            template: '<h1>Hi There</h1>',
+            resolve: {
+                screenshot(screenshotsService, $transition$) {
+                    return screenshotsService
+                        .getScreenshot($transition$.params().screenshotId);
+                },
+            },
+            component: 'screenshotsDetail',
         });
     });
 
