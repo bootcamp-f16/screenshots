@@ -1,8 +1,37 @@
 <div class="jumbotron screenshots-add">
-    <p class="lead">
-        Add a new screenshot
-    </p>
-    <button class="btn btn-primary btn-block">
-        Select a Screenshot
-    </button>
+    <div ng-show="!$ctrl.file">
+        <p class="lead">
+            Add a new screenshot
+        </p>
+        <button
+            class="btn btn-primary btn-block"
+            ngf-select
+            ng-model="$ctrl.file"
+            ngf-pattern="'image/*'"
+            ngf-accept="'image/*'"
+            ngf-max-size="20MB"
+            
+        >
+            Select a Screenshot
+        </button>
+    </div>
+    <div ng-show="$ctrl.file">
+        <img
+            class="img-responsive upload-preview"
+            ngf-src="$ctrl.file"
+            alt="screenshot"
+        >
+        <div class="row">
+            <div class="col-sm-6">
+                <button class="btn btn-primary btn-block">
+                    Upload
+                </button>
+            </div>
+            <div class="col-sm-6">
+                <button class="btn btn-danger btn-block" ng-click="$ctrl.cancelUpload()">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
 </div>
