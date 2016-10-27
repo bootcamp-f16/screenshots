@@ -1,7 +1,13 @@
+
 .screenshot-list .thumbnail {
     height: 200px;
+    text-align: center;
 }
 
 .screenshot-list .thumbnail img{
     max-height: 70%;
+}
+
+.screenshots-add {
+    text-align: center;
 }
