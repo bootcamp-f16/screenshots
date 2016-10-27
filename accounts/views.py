@@ -14,7 +14,7 @@ def register(request):
             new_user.save()
             messages.success(request, 'User created!')
 
-            return redirect('core:index')
+            return redirect('accounts:login')
     else:
         form = UserRegistrationForm()
 
