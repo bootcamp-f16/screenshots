@@ -1,5 +1,5 @@
 
-function screenshotsService($resource) {
+function screenshotsService($resource, Upload) {
     const screenshotsResource = $resource('/api/screenshots/:id/', { id: '@id' });
     return {
         getAllScreenshots() {
@@ -11,6 +11,16 @@ function screenshotsService($resource) {
             return screenshotsResource.get({ id }).$promise.then((data) => {
                 return data;
             });
+        },
+        uploadScreenshot(file) {
+            const upload = Upload.upload({
+                url: '/api/screenshots/upload/',
+                data: {
+                    screenshot: file,
+                },
+            });
+
+            return upload;
         },
     };
 }
