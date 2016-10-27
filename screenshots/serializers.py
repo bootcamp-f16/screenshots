@@ -7,3 +7,9 @@ class ScreenshotSerializer(serializers.ModelSerializer):
         model = Screenshot
         fields = ('id', 'screenshot', 'created_date', )
         read_only_fields = ('screenshot', )
+
+
+class ScreenshotUploadSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Screenshot
+        fields = ('id', 'screenshot', 'created_date', )
