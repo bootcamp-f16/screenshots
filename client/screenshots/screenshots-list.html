@@ -1,7 +1,14 @@
-<div class="row screenshot-list">
-    <div
-        class="col-md-3"
-        ng-repeat="screenshot in $ctrl.screenshots">
-        <screenshots-detail screenshot="screenshot"></screenshots-detail>
+<div class="row">
+    <div class="col-md-3">
+        <screenshots-add></screenshots-add>
+    </div>
+    <div class="col-md-9">
+        <div class="row screenshot-list">
+            <div
+                class="col-md-3"
+                ng-repeat="screenshot in $ctrl.screenshots">
+                <screenshots-detail screenshot="screenshot"></screenshots-detail>
+            </div>
+        </div>
     </div>
 </div>
