@@ -30,6 +30,7 @@
     "eslint-plugin-react": "^6.3.0",
     "gulp": "^3.9.1",
     "js-cookie": "^2.1.3",
+    "ng-file-upload": "^12.2.12",
     "ramda": "^0.22.1",
     "raw-loader": "^0.5.1",
     "webpack": "^1.13.2",
