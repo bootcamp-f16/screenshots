@@ -103,7 +103,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-LOGIN_REDIRECT_URL = reverse_lazy('core:index')
+LOGIN_REDIRECT_URL = reverse_lazy('screenshots:app')
 LOGIN_URL = reverse_lazy('accounts:login')
 LOGOUT_URL = reverse_lazy('accounts:logout')
 
