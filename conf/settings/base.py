@@ -1,6 +1,8 @@
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
+from django.core.urlresolvers import reverse_lazy
+
 from unipath import Path
 
 BASE_DIR = Path(__file__).ancestor(3)
@@ -32,6 +34,7 @@ INSTALLED_APPS = (
     'storages',
     'rest_framework',
     'core',
+    'accounts',
     'screenshots',
     'api',
 )
@@ -83,6 +86,9 @@ DATABASES = {
 }
 
 REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
     'PAGE_SIZE': 25,
 }
 
@@ -99,6 +105,10 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+LOGIN_REDIRECT_URL = reverse_lazy('screenshots:app')
+LOGIN_URL = reverse_lazy('accounts:login')
+LOGOUT_URL = reverse_lazy('accounts:logout')
 
 
 # Static files (CSS, JavaScript, Images)

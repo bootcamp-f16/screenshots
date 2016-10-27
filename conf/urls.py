@@ -19,7 +19,9 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^accounts/', include('accounts.urls', namespace='accounts')),
     url(r'^api/', include('api.urls')),
+    url(r'^screenshots/', include('screenshots.urls', namespace='screenshots')),
     url(r'^', include('core.urls', namespace='core')),
 ]
 
