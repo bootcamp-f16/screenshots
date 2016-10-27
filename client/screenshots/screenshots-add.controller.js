@@ -1,5 +1,5 @@
 
-function ScreenshotsAddController(screenshotsService) {
+function ScreenshotsAddController(screenshotsService, $state) {
     const ctrl = this;
 
     ctrl.cancelUpload = function cancelUpload() {
@@ -9,7 +9,7 @@ function ScreenshotsAddController(screenshotsService) {
     ctrl.uploadFile = function uploadFile() {
         screenshotsService.uploadScreenshot(ctrl.file)
             .then(() => {
-                alert('file uploaded');
+                $state.reload();
             });
     };
 }
