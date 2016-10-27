@@ -26,12 +26,35 @@
 </head>
 <body>
   
-  {% block content %}
-      
-  {% endblock content %}
+    {% block content %}
+        <header>
+            <nav class="navbar navbar-inverse navbar-static-top">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a href="{% url 'core:index' %}" class="navbar-brand">
+                            <i class="fa fa-desktop"></i> 
+                            Screenshots
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="container">
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-success">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+            {% block page_content %}
+                
+            {% endblock page_content %}
+        </div>
+    {% endblock content %}
 
-  {% block body_scripts %}
+    {% block body_scripts %}
       
-  {% endblock body_scripts %}
+    {% endblock body_scripts %}
 </body>
 </html>

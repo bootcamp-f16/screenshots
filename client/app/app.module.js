@@ -25,9 +25,9 @@ const AppModule = angular.module('app', [
         }).state('screenshot', {
             url: '/screenshot/{screenshotId}',
             resolve: {
-                screenshot(screenshotsService, $transition$) {
+                screenshot(screenshotsService, $stateParams) {
                     return screenshotsService
-                        .getScreenshot($transition$.params().screenshotId);
+                        .getScreenshot($stateParams.screenshotId);
                 },
             },
             component: 'screenshotsDetail',

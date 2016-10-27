@@ -32,6 +32,7 @@ INSTALLED_APPS = (
     'storages',
     'rest_framework',
     'core',
+    'accounts',
     'screenshots',
     'api',
 )
