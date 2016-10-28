@@ -34,6 +34,9 @@ function screenshotsService($resource, Upload, $http, $q) {
 
             return upload;
         },
+        removeScreenshot(id) {
+            return screenshotsResource.remove({ id }).$promise;
+        },
     };
 }
 

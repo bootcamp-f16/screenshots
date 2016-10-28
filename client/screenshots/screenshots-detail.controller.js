@@ -1,5 +1,5 @@
 
-function ScreenshotsDetailController(screenshotsService) {
+function ScreenshotsDetailController(screenshotsService, $state) {
     const ctrl = this;
 
     screenshotsService.getMe().then((me) => {
@@ -8,6 +8,13 @@ function ScreenshotsDetailController(screenshotsService) {
 
     ctrl.showActions = function showActions() {
         return ctrl.me && (ctrl.screenshot.owner === ctrl.me.id);
+    };
+
+    ctrl.removeScreenshot = function removeScreenshot() {
+        screenshotsService.removeScreenshot(ctrl.screenshot.id)
+            .then(() => {
+                $state.reload();
+            });
     };
 }
 
