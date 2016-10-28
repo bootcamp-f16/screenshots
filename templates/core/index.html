@@ -2,5 +2,8 @@
 
 {% block page_content %}
     <h2>Welcome</h2>
-    Welcome to the screenshots app
+    Welcome to the screenshots app.
+    <a href="{% url 'screenshots:app' %}" class="btn btn-primary btn-block btn-lg">
+        Go to app
+    </a>
 {% endblock page_content %}
