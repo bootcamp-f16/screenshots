@@ -10,5 +10,12 @@
         <p class="lead">
             Created: {{ $ctrl.screenshot.created_date | date:'medium'}}
         </p>
+        <p ng-show="$ctrl.showActions()">
+            <button
+                class="btn btn-danger"
+            >
+                Remove Screenshot
+            </button>
+        </p>
     </div>
 </div>
