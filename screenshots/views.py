@@ -10,5 +10,8 @@ class ScreenshotUpload(generics.CreateAPIView):
     serializer_class = ScreenshotUploadSerializer
     parser_classes = (MultiPartParser,)
 
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
+
 class AppView(TemplateView):
     template_name = 'screenshots/app.html'
