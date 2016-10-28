@@ -1,7 +1,10 @@
 
-function screenshotsService($resource, Upload) {
+function screenshotsService($resource, Upload, $http) {
     const screenshotsResource = $resource('/api/screenshots/:id/', { id: '@id' });
     return {
+        getMe() {
+            return $http.get('/api/me/').then(response => response.data);
+        },
         getAllScreenshots() {
             return screenshotsResource.get({}).$promise.then((data) => {
                 return data.results;
