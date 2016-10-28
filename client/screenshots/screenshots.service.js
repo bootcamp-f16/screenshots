@@ -1,9 +1,18 @@
 
-function screenshotsService($resource, Upload, $http) {
+function screenshotsService($resource, Upload, $http, $q) {
     const screenshotsResource = $resource('/api/screenshots/:id/', { id: '@id' });
+    let me = null;
+
     return {
         getMe() {
-            return $http.get('/api/me/').then(response => response.data);
+            if (me) {
+                return $q.when(me);
+            }
+
+            return $http.get('/api/me/').then((response) => {
+                me = response.data;
+                return me;
+            });
         },
         getAllScreenshots() {
             return screenshotsResource.get({}).$promise.then((data) => {
@@ -24,6 +33,9 @@ function screenshotsService($resource, Upload, $http) {
             });
 
             return upload;
+        },
+        removeScreenshot(id) {
+            return screenshotsResource.remove({ id }).$promise;
         },
     };
 }
