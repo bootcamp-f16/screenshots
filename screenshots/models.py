@@ -1,7 +1,8 @@
 from django.db import models
 from django.conf import settings
 from django.core.urlresolvers import reverse
-from django.core.mail import send_mail
+
+from .helpers import send_new_screenshot_email
 
 class Screenshot(models.Model):
     screenshot = models.ImageField(
@@ -17,10 +18,4 @@ class Screenshot(models.Model):
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
 
-        send_mail(
-            'Test Subject',
-            'Test Message.',
-            'matt@apaxsoftware.com',
-            ['mtsmit2@gmail.com'],
-            fail_silently=False,
-        )
+        send_new_screenshot_email(self)
