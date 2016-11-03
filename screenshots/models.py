@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+from django.core.mail import send_mail
 
 class Screenshot(models.Model):
     screenshot = models.ImageField(
@@ -8,3 +9,14 @@ class Screenshot(models.Model):
         null=True)
     created_date = models.DateTimeField(auto_now_add=True)
     owner = models.ForeignKey(settings.AUTH_USER_MODEL)
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+
+        send_mail(
+            'Test Subject',
+            'Test Message.',
+            'matt@apaxsoftware.com',
+            ['mtsmit2@gmail.com'],
+            fail_silently=False,
+        )
