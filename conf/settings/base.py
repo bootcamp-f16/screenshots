@@ -116,3 +116,7 @@ LOGOUT_URL = reverse_lazy('accounts:logout')
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
+
+# Email Settings
+EMAIL_BACKEND = "sgbackend.SendGridBackend"
+SENDGRID_API_KEY = os.environ['SENDGRID_API_KEY']
