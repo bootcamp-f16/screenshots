@@ -1,1 +1,5 @@
-This is a test text email
+**New Screenshot**
+
+There is a new screenshot created {{screenshot.created_date}}
+
+The screenshot can be viewed at: {{screenshot.get_email_url}}

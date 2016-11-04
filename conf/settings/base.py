@@ -119,3 +119,5 @@ MEDIA_URL = '/media/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DEFAULT_FROM_EMAIL = 'matt@apaxsoftware.com'
+
+BASE_URL = 'https://bootcamp-screenshots.herokuapp.com'

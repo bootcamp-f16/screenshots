@@ -16,10 +16,14 @@ def send_new_screenshot_email(screenshot):
     text_template = get_template('screenshots/emails/new_screenshot.txt')
     html_template = get_template('screenshots/emails/new_screenshot.html')
 
-    subject, from_email = 'New Screenshot', settings.DEFAULT_FROM_EMAIL
+    # Setup context for the emails, same as using templates to render a HTML page
+    context = {
+        'screenshot': screenshot,
+    }
 
-    text_content = text_template.render()
-    html_content = html_template.render()
+    subject, from_email = 'New Screenshot', settings.DEFAULT_FROM_EMAIL
+    text_content = text_template.render(context)
+    html_content = html_template.render(context)
     msg = EmailMultiAlternatives(subject, text_content, from_email, user_emails)
     msg.attach_alternative(html_content, "text/html")
     msg.send()

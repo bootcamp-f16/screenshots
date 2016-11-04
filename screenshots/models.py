@@ -15,6 +15,9 @@ class Screenshot(models.Model):
     def get_absolute_url(self):
         return reverse('screenshots:app') + '#/screenshot/{}'.format(self.pk)
 
+    def get_email_url(self):
+        return settings.BASE_URL + self.get_absolute_url()
+
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
 
